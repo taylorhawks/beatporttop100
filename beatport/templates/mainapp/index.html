@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1>Top 100</h1>
+
+  <table>
+    {% for track in tracks %}
+      <tr>
+
+          <td><a href="{% url 'detail' forloop.counter %}"><img class="album-art" src={{track.images.medium.url}}></img></a></td>
+          <td> {{track.title}} </td>
+          <td> {{track.artists.0.name}} </td>
+          <td> {{track.genres.0.name}} </td>
+          <td> {{track.bpm}} BPM </td>
+          <td> {{track.key}} </td>
+
+      </tr>
+    {% endfor %}
+  </table>
+
+{% endblock %}

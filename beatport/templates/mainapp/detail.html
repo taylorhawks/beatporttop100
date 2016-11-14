@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1>{{track.title}}</h1>
+  <table>
+    <tr>
+      <td>
+        <img class="graph" src ={{cqtimg}} style="width:600px;height:auto;"></img>
+        <img class="graph" src={{chromagramimg}} style="width:600px;height:auto;"></img>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <center>
+          <img src={{track.images.medium.url}}></img><audio controls><source src={{track.preview.mp3.url}}></source></audio>
+        </center>
+      </td>
+    </tr>
+  </table>
+
+{% endblock %}
